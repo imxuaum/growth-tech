@@ -3,18 +3,23 @@ import axios from 'axios'
 
 const app = express()
 
-const url = 'http://jsonplaceholder.typicode.com/users'
-
-app.get('/', (request, response) => {
-  response.send('<h1>Hello Wolrd</h1>')
-})
+const userUrl = 'http://jsonplaceholder.typicode.com/users'
+const postUrl = 'http://jsonplaceholder.typicode.com/posts'
 
 app.get('/users', async (request, response) => {
-  const apiResponse = await axios.get(url)
+  const apiResponse = await axios.get(userUrl)
 
   const users = apiResponse.data
 
   return response.json(users)
+})
+
+app.get('/posts', async (request, response) => {
+  const apiResponse = await axios.get(postUrl)
+
+  const posts = apiResponse.data
+
+  return response.json(posts)
 })
 
 app.listen('3333', () => {
