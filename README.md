@@ -2,6 +2,11 @@
 
 > API para gerenciamento de posts com interface de usuário 🏢 
 
+## 💻 Tecnologias
+
+- [Node.js](https://nodejs.org/en/)
+- [Yarn](https://yarnpkg.com)
+
 ## 🚀 Instalação e execução
 
 _ps: Se precisar de ajuda para fazer um clone, esse [tutorial aqui](https://help.github.com/pt/github/creating-cloning-and-archiving-repositories/cloning-a-repository) vai te ajudar 💖_
@@ -10,7 +15,7 @@ _ps: Se precisar de ajuda para fazer um clone, esse [tutorial aqui](https://help
 2. Altere o diretório de trabalho atual para o local em que deseja ter o código do módulo salvo no seu computador.
 3. Faça um clone desse repositório rodando: <br> `https://github.com/imxuaum/growth-tech.git`;
 4. Entre na pasta rodando pelo terminal: `cd growth-tech`;
-5. Rode `yarn` para instalar as dependências do projeto;
+5. Rode `cd backend/ && yarn && cd .. && cd frontend/ && yarn && cd .. ` para instalar as dependências do projeto;
 6. Rode `yarn dev` para iniciar o servidor de desenvolvimento.
 
 ## :page_facing_up: Licença
