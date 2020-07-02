@@ -1,0 +1,16 @@
+{
+  "name": "growth-tech",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/imxuaum/growth-tech",
+  "author": "joaoqsl <joaojpmoreira25@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "server": "npm run dev --prefix backend",
+    "web": "npm run start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run web"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0"
+  }
+}
