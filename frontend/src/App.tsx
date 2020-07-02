@@ -1,25 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import api from './services/api'
+
+import image from './assets/man.png'
+
+import './Main.css'
+import './global.css'
+
+interface Post {
+  id: number;
+  userId: number;
+  name: string;
+  company: string;
+  title: string;
+  body: string;
+}
 
 function App() {
+  const [posts, setPosts] = useState<Array<Post>>([])
+
+  useEffect(() => {
+    api.get('posts').then(response => {
+      setPosts(response.data)
+    })
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div id="app">
+        <main>
+          <ul>
+            {posts.map(post => (
+              <li key={post.id} className="post-item">
+                <header>
+                  <img src={image} alt=""/>
+                  <div className="user-info">
+                    <strong>{post.name}</strong>
+                    <span>{post.company}</span>
+                  </div>
+                </header>
+                <h1>{post.title}</h1>
+                <p>{post.body}</p>
+              </li>
+            ))}
+          </ul>
+        </main>
+      </div>
+    </>
   );
 }
 
